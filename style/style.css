@@ -67,7 +67,7 @@ header {
 }
 .forms>div, .outputs>div {
      padding: 40px;
-     margin: 15px 0 0 80px;
+     margin: 35px 0 0 270px;
      background-color: rgba(229,229,229, 0.9);
 }
 .forms>.prompt-div {
@@ -106,11 +106,11 @@ button {
      justify-content: center;
      height: 50vh;
      font-size: 1.5em;
-     margin-left:5%;
 }
 .outputs > div.temperature {
+     margin: 15px 0 0 100px;
      opacity: 0;
-     margin-top: 110px;
+     margin-top: 50px;
 }
 .temperature>h3 {
      padding: 0.3em 0 0.3em 0;
