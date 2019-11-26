@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+     <html lang="en">
+     <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          <title>Weather API</title>
+          <link rel="stylesheet" href="./style/style.css">
+          <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700i&display=swap" rel="stylesheet">
+          <script
+               src="https://code.jquery.com/jquery-3.4.1.js"
+               integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+               crossorigin="anonymous"></script>
+          <script type="text/javascript" src="./js/script.js"></script>
+     </head>
+     <body>
+          <header>
+               <div class="header-div">
+                    <h1>WEATHER</h1>
+               </div>
+               <div class="show-weather">Weather</div>
+          </header>
+
+          <div class="container">
+
+               <div class="forms">
+                    <div class="prompt-div">
+                         <h3 class="prompt">Get your current weather</h3>
+                    </div>    
+               <div>
+                    <form>
+                         ZIP CODE:<br>
+                         <input type="number" name="zip" id="zip"><br>
+                    </form>
+                    <button id="zip-submit">SUBMIT</button>
+               </div>
+               <div>
+                    <form>
+                              CITY:<br>
+                         <input type="text" name="city" id="city"><br>
+                    </form>
+                         <button id="city-submit">SUBMIT</button>
+                         <h3></h3>
+               </div>
+               </div> 
+
+               <div class="outputs">
+                    <div class="temperature">
+                         <h3 class="city-name"></h3>
+                         <h3 class="fahrenheit"></h3>
+                         <h3 class="description"></h3>
+                         <h3 class="humidity"></h3>
+                         <h3 class="min-fahrenheit"></h3>
+                         <h3 class="max-fahrenheit"></h3>
+                    </div>
+               </div>
+
+          </div>
+          
+     </body>
+     </html>
