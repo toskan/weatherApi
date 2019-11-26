@@ -8,7 +8,7 @@ function apiWeatherGet(zipCode) {
      .then((resp) => {
           return  resp.json();
      })
-     .then((jsonData) => {
+     .then((jsonData, city) => {
           city = jsonData.city.name;
           apiCityGet(city);       
      })
@@ -60,7 +60,7 @@ function submit() {
      $('.show-weather').fadeIn().css('opacity', '1');
      }
      else {
-     city = value;
+     let city = value;
      apiCityGet(city);
      $('.temperature').fadeIn().css('opacity', '1');
      $('.show-weather').fadeIn().css('opacity', '1');
