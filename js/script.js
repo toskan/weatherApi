@@ -59,8 +59,8 @@ let getIpClosure = (function() {
 })();
 
 function getIp() {
-     let accessKey = 'aa14aa302bc392025897a4d2ebe3b877';
-     let url = 'http://api.ipstack.com/check?access_key=' + accessKey; 
+     let accessKey = 'at_TjkzQysmyA5gxmecbgqlviX69hDXh';
+     let url = 'https://geo.ipify.org/api/v1?apiKey=' + accessKey; 
      console.log(url);
      fetch((url))
           .then((res) => {
@@ -69,7 +69,8 @@ function getIp() {
           })
           .then((data, city) => {
                console.log(data);
-               city = data.city;
+               console.log(data.location.city);
+               city = data.location.city;
                apiCityGet(city); 
                $('.temperature').fadeIn().css('opacity', '1');
                $('.show-weather').fadeIn().css('opacity', '1');
