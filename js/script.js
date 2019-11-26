@@ -1,3 +1,4 @@
+//get zip data from input submit
 function apiWeatherGet(zipCode) {
      let apiKey = 'bca4490b7d842fc7c26039b7d7ccfe34';
      let url = 
@@ -13,6 +14,7 @@ function apiWeatherGet(zipCode) {
      })
 }
 
+//get city data from input submit (if zip submitted this function always runs after apiWeather)
 function apiCityGet(city) {
      let apiKey = 'bca4490b7d842fc7c26039b7d7ccfe34';
      let url = 
@@ -31,13 +33,10 @@ function apiCityGet(city) {
           let kelvin = data.main.temp; 
           let lowKelvin = data.main.temp_min;
           let highKelvin = data.main.temp_max;
-          let kelvinToF = ((kelvin - 273.15) * 9/5 + 32);
-          let lowKelvinToF = ((lowKelvin - 273.15) * 9/5 + 32);
-          let highKelvinToF = ((highKelvin - 273.15) * 9/5 + 32);
           let degrees = '\u00B0';
-          let fahrenheit = Math.round(kelvinToF*2)/2;
-          let lowFahrenheit = Math.round(lowKelvinToF*2)/2;
-          let highFahrenheit = Math.round(highKelvinToF*2)/2;
+          let fahrenheit = kToF(kelvin);
+          let lowFahrenheit = kToF(lowKelvin);
+          let highFahrenheit = kToF(highKelvin);
           $('.city-name').text('Currently in ' + cityDisplay); 
           $('.fahrenheit').text('it is ' + fahrenheit + degrees + 'F');
           $('.description').text('with ' + description);
@@ -48,6 +47,7 @@ function apiCityGet(city) {
      })
 }
 
+//getIp only runs once
 let getIpClosure = (function() {
      let closure = false;
      return function() {
@@ -58,6 +58,7 @@ let getIpClosure = (function() {
      };
 })();
 
+//gets the ip of the client which provides the city and then executes apiCityGet
 function getIp() {
      let accessKey = 'at_TjkzQysmyA5gxmecbgqlviX69hDXh';
      let url = 'https://geo.ipify.org/api/v1?apiKey=' + accessKey; 
@@ -77,6 +78,7 @@ function getIp() {
      })
 }
 
+//what to do when value submitted for zip or city
 function submit() {
      let value = $('#city-zip').val();
      let valueNoSpace = $('#city-zip').val().replace(/\s/g,'');
@@ -94,8 +96,16 @@ function submit() {
      }
 }
 
+//get rid of input value when input is clicked
 function clearInput() {
      $('#city-zip').val(' ');
+}
+
+//convert kelvin to fahrenheit
+function kToF(k, f) { 
+     f = (((k - 273.15) * 9/5 + 32));
+     f = Math.round(f*2)/2;
+     return f;
 }
 
 function onReady(){
