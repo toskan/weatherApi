@@ -48,6 +48,34 @@ function apiCityGet(city) {
      })
 }
 
+let getIpClosure = (function() {
+     let closure = false;
+     return function() {
+          if (!closure) {
+               closure = true;
+               getIp();
+          }
+     };
+})();
+
+function getIp() {
+     let accessKey = 'aa14aa302bc392025897a4d2ebe3b877';
+     let url = 'http://api.ipstack.com/check?access_key=' + accessKey; 
+     console.log(url);
+     fetch((url))
+          .then((res) => {
+               console.log(res);
+               return  res.json();
+          })
+          .then((data, city) => {
+               console.log(data);
+               city = data.city;
+               apiCityGet(city); 
+               $('.temperature').fadeIn().css('opacity', '1');
+               $('.show-weather').fadeIn().css('opacity', '1');
+     })
+}
+
 function submit() {
      let value = $('#city-zip').val();
      let valueNoSpace = $('#city-zip').val().replace(/\s/g,'');
@@ -73,6 +101,7 @@ function onReady(){
      $('#submit').click(submit);
      $('#city-zip').click(clearInput);
      $('body').css('height', window.innerHeight);
+     getIpClosure();
 }
 $('document').ready(onReady);
 
