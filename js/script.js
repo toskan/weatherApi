@@ -1,4 +1,4 @@
-function apiWeatherGet(zipCode, city) {
+function apiWeatherGet(zipCode) {
      let apiKey = 'bca4490b7d842fc7c26039b7d7ccfe34';
      let response = null;
      let url = 
@@ -8,7 +8,7 @@ function apiWeatherGet(zipCode, city) {
      .then((resp) => {
           return  resp.json();
      })
-     .then((jsonData, city) => {
+     .then((jsonData) => {
           city = jsonData.city.name;
           apiCityGet(city);       
      })
@@ -50,35 +50,30 @@ function apiCityGet(city) {
      })
 }
 
-function zipSubmit() {
-     zipCode = $('#zip').val();
+function submit() {
+     let value = $('#city-zip').val();
+     let valueNoSpace = $('#city-zip').val().replace(/\s/g,'');
+     if ( /^\d+$/.test(valueNoSpace)) {
+     zipCode = valueNoSpace;
      apiWeatherGet(zipCode);
      $('.temperature').fadeIn().css('opacity', '1');
      $('.show-weather').fadeIn().css('opacity', '1');
-}
-
-function citySubmit() {
-     city = $('#city').val();
+     }
+     else {
+     city = value;
      apiCityGet(city);
      $('.temperature').fadeIn().css('opacity', '1');
      $('.show-weather').fadeIn().css('opacity', '1');
+     }
 }
 
-function clearZipInput() {
-     $('#zip').val(' ');
-     $('#city').val(' ');
-}
-
-function clearCityInput() {
-     $('#city').val(' ');
-     $('#zip').val(' ');
+function clearInput() {
+     $('#city-zip').val(' ');
 }
 
 function onReady(){
-     $('#zip-submit').click(zipSubmit);
-     $('#city-submit').click(citySubmit); 
-     $('#zip').click(clearZipInput);
-     $('#city').click(clearCityInput);
+     $('#submit').click(submit);
+     $('#city-zip').click(clearInput);
      $('body').css('height', window.innerHeight);
 }
 $('document').ready(onReady);

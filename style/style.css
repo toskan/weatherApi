@@ -76,8 +76,7 @@ header {
      flex-direction: column;
      justify-content: center;
      align-content: center;
-     margin-bottom: 20px;
-     margin-top: 30px;
+     margin-top: 50px;
 }
 form>.prompt {
      font-size: 1.5em;
@@ -88,13 +87,6 @@ form>.prompt {
      margin-bottom: 8px;
      height: 25px;
      border: 0;
-}
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-     -webkit-appearance: none;
-     -moz-appearance: none;
-     appearance: none;
-     margin: 0; 
 }
 button {
      padding: 3px;
