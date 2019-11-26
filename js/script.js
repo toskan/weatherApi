@@ -27,6 +27,7 @@ function apiCityGet(city) {
           return  res.json();
      })
      .then((data) => {
+          let cityDisplay = data.name;
           let description = data.weather[0].description;
           let humidity = data.main.humidity;
           let kelvin = data.main.temp; 
@@ -39,7 +40,7 @@ function apiCityGet(city) {
           let fahrenheit = Math.round(kelvinToF*2)/2;
           let lowFahrenheit = Math.round(lowKelvinToF*2)/2;
           let highFahrenheit = Math.round(highKelvinToF*2)/2;
-          $('.city-name').text('Currently in ' + city); 
+          $('.city-name').text('Currently in ' + cityDisplay); 
           $('.fahrenheit').text('it is ' + fahrenheit + degrees + 'F');
           $('.description').text('with ' + description);
           $('.humidity').text('and a humidity level of ' + humidity + '%');
