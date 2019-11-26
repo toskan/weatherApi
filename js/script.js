@@ -1,6 +1,5 @@
 function apiWeatherGet(zipCode) {
      let apiKey = 'bca4490b7d842fc7c26039b7d7ccfe34';
-     let response = null;
      let url = 
      'https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast?zip=' + zipCode + '&appid=' + apiKey;
      console.log(url);
@@ -16,7 +15,6 @@ function apiWeatherGet(zipCode) {
 
 function apiCityGet(city) {
      let apiKey = 'bca4490b7d842fc7c26039b7d7ccfe34';
-     let response = null;
      let url = 
      'https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
      console.log(url);
