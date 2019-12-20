@@ -168,7 +168,7 @@ function getIp() {
 }
 
 function onReady(){
-     getIp();
+     // getIp();
      $('.search-input').click(clearInput);
      $('.fa-search').click(submit);
      $('.fa-search').click(inputSearchClick);
