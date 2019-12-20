@@ -1,53 +1,70 @@
 <!DOCTYPE html>
      <html lang="en">
-     <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <meta http-equiv="X-UA-Compatible" content="ie=edge">
-          <title>Weather API</title>
-          <link rel="stylesheet" href="./style/style.css">
-          <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700i&display=swap" rel="stylesheet">
-          <script
-               src="https://code.jquery.com/jquery-3.4.1.js"
-               integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-               crossorigin="anonymous"></script>
-          <script type="text/javascript" src="./js/script.js"></script>
-     </head>
+          <head>
+               <meta charset="UTF-8">
+               <meta name="viewport" content="width=device-width, initial-scale=1.0">
+               <meta http-equiv="X-UA-Compatible" content="ie=edge">
+               <title>Weather API</title>
+               <link rel="stylesheet" href="styles/normalize.css" media="screen" charset="utf-8">
+               <link rel="stylesheet" href="./styles/style.css">
+               <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700i&display=swap" rel="stylesheet">
+               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+               <script
+                    src="https://code.jquery.com/jquery-3.4.1.js"
+                    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+                    crossorigin="anonymous"></script>
+               <script type="text/javascript" src="./js/scripts.js"></script>
+          </head>
+
      <body>
+
           <header>
-               <div class="header-div">
-                    <h1>WEATHER</h1>
+
+               <div id="input-search-id" class="input-div search-div">
+                    <input type="text" class="search-input" spellcheck="false"><i class="fas fa-search"></i>
                </div>
-               <div class="show-weather">Weather</div>
+
           </header>
 
-          <div class="container">
+          <div id="center-id">
 
-               <div class="forms">
-                    <div class="prompt-div">
-                         <h3 class="prompt">Get your current weather</h3>
-                    </div>    
-               <div>
-                    <form>
-                         ZIP or CITY:<br>
-                         <input type="text" name="zip" id="city-zip" autocomplete="off"><br>
-                    </form>
-                    <button id="submit">SUBMIT</button>
+               <div id="city-div">
+                    <h2 id="city"></h2>
                </div>
-               </div> 
-
-               <div class="outputs">
-                    <div class="temperature">
-                         <h3 class="city-name"></h3>
-                         <h3 class="fahrenheit"></h3>
-                         <h3 class="description"></h3>
-                         <h3 class="humidity"></h3>
-                         <h3 class="min-fahrenheit"></h3>
-                         <h3 class="max-fahrenheit"></h3>
-                    </div>
+               <div id="weather-info">
+                         <h2 class="temp"></h2>
+               </div>
+               <div id="feels-like">
+                         <h2 id="feel"></h2>
                </div>
 
           </div>
-          
+
+          <div id="container-id">
+
+               <div id="weather-bar">
+                    <div id="hottest"></div>
+                    <div id="hot"></div>
+                    <div id="warm"></div>
+                    <div id="mild"></div>
+                    <div id="cold"></div>
+                    <div id="colder"></div>
+                    <div id="coldest"></div>
+               </div>
+
+               <div id="weather-awesome">
+                    <h2 id="weather-description"><i id="description-fa"></i><span id="description"></span></h2>
+               </div>
+
+          </div>
+
+          <div id="conditions-id">
+               <h2 class="low">low | high</h2>
+               <h2 class="humidity">humidity <i class="fas fa-water"></i><span id="humidity"></span></h2>
+               <h2 class="wind">wind <i class="fas fa-wind"></i><span id="wind"></span></h2>
+               <h2 class="sunrise">sunrise <i class="far fa-sun"></i><span id="rise"></span></h2>
+               <h2 class="sunset">sunset <i class="fas fa-moon"></i><span id="set"></span></h2>
+          </div>
+
      </body>
-     </html>
+</html>
