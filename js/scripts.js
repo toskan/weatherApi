@@ -12,11 +12,11 @@ function submit() {
      let valueNoSpace = $('.search-input').val().replace(/\s/g,'');
      if ( /^\d+$/.test(valueNoSpace)) {
           zipCode = valueNoSpace;
-          // apiWeatherGet(zipCode);
+          apiWeatherGet(zipCode);
      }
      else {
           let city = value;
-          // apiCityGet(city);
+          apiCityGet(city);
      }
 }
 
@@ -169,14 +169,13 @@ function getIp() {
 
 function onReady(){
      $('.fa-search').click(submit);
-     // $('.fa-search').click(clearInput);
      $('.search-input').click(clearInput);
      $('#center-id, #container-id, #conditions-id').toggleClass('opacity', false);
      $('#center-id, #container-id, #conditions-id').toggleClass('opacity-2', true);
      $('.fa-search').click(inputSearchClick);
      document.addEventListener("keyup", submitOnEnter);
      $('body').css('height', window.innerHeight);
-     // getIp();
+     getIp();
      $('#input-search-id').toggleClass('search-div', true);
      $('#input-search-id').toggleClass('input-div', false);
      $('.search-input').attr('value', 'zip or city');
