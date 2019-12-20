@@ -179,7 +179,7 @@ function onReady(){
      $('#input-search-id').toggleClass('input-div', false);
      $('.search-input').attr('value', 'zip or city');
      $('body').css('height', window.innerHeight);
-     $(".search-div .search-input").blur(); 
+     $(".search-div>.search-input").blur(); 
 }
 $('document').ready(onReady);
 
