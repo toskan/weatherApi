@@ -1,9 +1,8 @@
 function inputSearchClick() {
      $('#center-id, #container-id, #conditions-id').toggleClass('opacity');
      $('#center-id, #container-id, #conditions-id').toggleClass('opacity-2');
-     $('#input-search-id').toggleClass('search-div');
-     $('#input-search-id').toggleClass('input-div');
-     $('.search-input').attr('value', 'zip or city');
+     $('.search-div').toggleClass('display');
+     $('.input-div').toggleClass('display');
 }
 
 //what to do when value submitted for zip or city
@@ -175,11 +174,10 @@ function onReady(){
      document.addEventListener("keyup", submitOnEnter);
      $('#center-id, #container-id, #conditions-id').toggleClass('opacity', false);
      $('#center-id, #container-id, #conditions-id').toggleClass('opacity-2', true);
-     $('#input-search-id').toggleClass('search-div', true);
-     $('#input-search-id').toggleClass('input-div', false);
+     $('.search-div').toggleClass('display', false);
+     $('.input-div').toggleClass('display', true);
      $('.search-input').attr('value', 'zip or city');
      $('body').css('height', window.innerHeight);
-     $(".search-div>.search-input").blur(); 
 }
 $('document').ready(onReady);
 

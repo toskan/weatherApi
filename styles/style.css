@@ -29,6 +29,7 @@ header {
 /* testing */
 .search-div {
      background-color: black;
+     height: 3em;
 }
 .search-div .fa-search {
      font-size: 1.5em;
@@ -50,6 +51,12 @@ header {
      top: .5em;
      right: .5em;
      color: black;
+}
+.search-div.display {
+     display: none;
+}
+.input-div.display {
+     display: none;
 }
 .search-input {
      background-color: white;
