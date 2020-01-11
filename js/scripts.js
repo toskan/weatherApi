@@ -4,6 +4,7 @@ function inputSearchClick() {
      $('.search-div').toggleClass('display');
      $('.input-div').toggleClass('display');
 }
+//testing
 
 //what to do when value submitted for zip or city
 function submit() {
