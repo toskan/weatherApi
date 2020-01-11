@@ -4,7 +4,6 @@ function inputSearchClick() {
      $('.search-div').toggleClass('display');
      $('.input-div').toggleClass('display');
 }
-//testing
 
 //what to do when value submitted for zip or city
 function submit() {
@@ -168,7 +167,7 @@ function getIp() {
 }
 
 function onReady(){
-     // getIp();
+     getIp();
      $('.search-input').click(clearInput);
      $('.fa-search').click(submit);
      $('.fa-search').click(inputSearchClick);
